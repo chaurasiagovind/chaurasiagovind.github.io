@@ -326,7 +326,7 @@ ul#nav li.current a { color: #F06000; }
 }
 
 .javascript{
-  	width: 75%;
+  	width: 45%;
   	-moz-animation: javascript 2s ease;
   	-webkit-animation: javascript 2s ease;
 }
@@ -341,17 +341,17 @@ ul#nav li.current a { color: #F06000; }
   	-webkit-animation: bootstrap 2s ease;
 }
 .css {
-  	width: 70%;
+  	width: 50%;
   	-moz-animation: css 2s ease;
   	-webkit-animation: css 2s ease;
 }
 .html5 {
-  	width: 75%;
+  	width: 55%;
   	-moz-animation: html5 2s ease;
   	-webkit-animation: html5 2s ease;
 }
 .jquery {
-  	width: 70%;
+  	width: 50%;
   	-moz-animation: jquery 2s ease;
   	-webkit-animation: jquery 2s ease;
 }
