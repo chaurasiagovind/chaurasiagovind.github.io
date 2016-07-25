@@ -326,12 +326,12 @@ ul#nav li.current a { color: #F06000; }
 }
 
 .javascript{
-  	width: 45%;
+  	width: 50%;
   	-moz-animation: javascript 2s ease;
   	-webkit-animation: javascript 2s ease;
 }
 .angular {
-  	width: 55%;
+  	width: 65%;
   	-moz-animation: angular 2s ease;
   	-webkit-animation: angular 2s ease;
 }
@@ -341,17 +341,17 @@ ul#nav li.current a { color: #F06000; }
   	-webkit-animation: bootstrap 2s ease;
 }
 .css {
-  	width: 50%;
+  	width: 70%;
   	-moz-animation: css 2s ease;
   	-webkit-animation: css 2s ease;
 }
 .html5 {
-  	width: 55%;
+  	width: 75%;
   	-moz-animation: html5 2s ease;
   	-webkit-animation: html5 2s ease;
 }
 .jquery {
-  	width: 50%;
+  	width: 65%;
   	-moz-animation: jquery 2s ease;
   	-webkit-animation: jquery 2s ease;
 }
