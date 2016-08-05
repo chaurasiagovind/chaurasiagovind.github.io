@@ -1,0 +1,104 @@
+<!--START MY ORDER PAGE CONTENT -->
+<div class="order-cart contentPadding" ng-controller="orderCtrl">
+
+    <section class="cart-head">
+        <div class="top-labels">
+            <a  class="back-button" ng-click="switchView(previousState)"><img src="images/ic_backarrow.png"></a>
+            <span class="page-label">my order</span>
+            <div class="my-order-label">
+                <span>pick up time</span>
+                <span class="header-label">10-15m </span>
+            </div>
+        </div>
+    </section>
+    <div class="cart">
+     <!--BURGER SECTIONS -->
+        <div class="item-count-bar">
+          <span>  burgers ({{itemCount.burgers}})<span>
+        </div>
+        <div class="item-order-card" ng-repeat= "burger in orderCart.burgers" >
+            <div class="item-head">
+                <span class="item-name">{{burger.name}}</span>
+                <span class="item-cost">{{burger.rate * burger.quantity| currency}}</span>
+            </div>
+            <div class="item-measure">{{burger.description}}</div>
+            <p class="item-toppings">  <span ng-repeat="topping in burger.toppings">{{ topping.name}}<span ng-if="!$last">,&nbsp;</span></p>
+            <p class="item-seasonings"> <span ng-repeat="seasoning in burger.seasonings">{{seasoning.name}}<span ng-if="!$last">,&nbsp;</span></p>
+            <button class="qty-btn" qty-directive bind='burger.quantity'><span>qty</span><span>{{burger.quantity}}</span></button>
+        </div>
+         <!--GO TO BACK TO DRINKS, SIDES PAGE -->
+        <div class="back-to-menu" ng-if="!orderCart.burgers.length">
+            <a href="#/burgersPage">
+            go back to burgers menu <span id="arrow-right"></span>
+         </a>
+        </div>
+
+          <!--DO not delete this commented code since warning vd has to be taken  -->
+
+      <!--   <div class="item-order-card">
+            <div class="item-head">
+                <span class="item-name">my [featured burger] 2</span>
+                <span class="item-cost">$5.65</span>
+            </div>
+            <div class="item-measure">1/2 ib, medium</div>
+            <p class="item-toppings">lettuce, tomato, onion, pickles, cheddar</p>
+            <p class="item-seasonings">dijon mustard, ketchup, parsley, chilli, garlic powder</p>
+            <div class="sorry-notification">sorry!! we ran out of dijon mustard
+                <p>remove burger</p>
+            </div>
+            <button class="qty-btn"><span>qty</span><span>1</span></button>
+        </div> -->
+
+
+          <!--SIDES SECTION -->
+        <div class="item-count-bar">
+          <span>sides ({{itemCount.sides}})</span>  
+        </div>
+        <div class="item-order-card" ng-repeat= "side in orderCart.sides" >
+            <div class="item-head">
+                <span class="item-name">{{side.name}}</span>
+                <span class="item-cost">{{side.rate  * side.quantity | currency}}</span>
+            </div>
+            <button class="qty-btn"qty-directive bind='side.quantity'><span>qty</span><span>{{side.quantity}}</span></button>
+        </div>
+         <!--GO TO BACK TO DRINKS, SIDES PAGE -->
+        <div class="back-to-menu" ng-if="!orderCart.sides.length">
+            <a href="#/sidesPage">
+            go back to sides menu <span id="arrow-right"></span>
+         </a>
+        </div>
+         <!--DRINKS SECTIONS -->
+        <div class="item-count-bar">
+           <span>drinks ({{itemCount.drinks}})</span> 
+        </div>
+          <div class="item-order-card" ng-repeat= "drink in orderCart.drinks" >
+            <div class="item-head">
+                <span class="item-name">{{drink.name}}</span>
+                <span class="item-cost">{{drink.rate * drink.quantity|currency}}</span>
+            </div>
+            <button class="qty-btn"qty-directive bind='drink.quantity'><span>qty</span><span>{{drink.quantity}}</span></button>
+        </div>
+          <!--GO TO BACK TO DRINKS, SIDES PAGE -->
+        <div class="back-to-menu" ng-if="!orderCart.drinks.length">
+            <a href="#/drinksPage">
+            go back to drinks menu <span id="arrow-right"></span>
+         </a>
+        </div>
+          <!--SALES TAX SECTION -->
+        <div class="sales-tax">
+           <span> sales tax</span> 
+           
+        </div>
+        <div class="sales-tax-rate">{{serviceTax.toFixed(2) | currency}}</div>
+        <!--DIV ADDED TO KEEP EVERYTHING ABOVE CHECKOUT BUTTON-->
+        <div class="checkout-holder"></div>
+    </div>
+    <!-- CHECK OUT -->
+    <a href="#/orderTracking" ng-class="{'inactive': itemCount.total<=0}">
+        <div class="check-out-button">
+            <span>checkout ({{itemCount.total}} items)</span>
+            <span>{{grandTotal.toFixed(2) | currency}}</span>
+        </div>
+    </a>
+</div>
+<!--END MY ORDER PAGE CONTENT -->

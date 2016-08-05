@@ -1,0 +1,16 @@
+[
+	{
+		"id" : 1,
+		"name" : "fries",
+		"rate" : "3.64",
+		"quantity" : 1, 
+		"imgURL" : "images/img_sides_fries.png"
+	},
+	{
+		"id" : 2,
+		"name" : "salad",
+		"rate" : "5.24",
+		"quantity" : 1, 
+		"imgURL" : "images/img_sides_salad.png"
+	}
+]

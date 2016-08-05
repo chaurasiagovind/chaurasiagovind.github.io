@@ -1,0 +1,26 @@
+<div ui-view ng-controller="burgerCtrl">
+	<a class="button orange add-item" ui-sref="dashboard.menu.burgers.addBurger">Add new Burger</a>
+	<table class="table-list" >
+		<tr>
+			<th>Burger Name</th>
+			<th>Price</th>
+			<th>Date</th>
+			<th>Status</th>
+			<th>Actions</th>
+		</tr>
+		<tr ng-repeat="item in burgerList">
+			<td><a ui-sref="dashboard.menu.burgers.detail({burgerId:item.id})">{{item.name}}</a></td>
+			<td>{{item.price}}</td>
+			<td>{{item.date}}</td>
+			<td>{{item.status}}</td>
+			<td>
+				<select>
+					<option>Activate</option>
+					<option>Inactivate</option>
+					<option>Edit</option>
+					<option>Delete</option>
+				</select>
+			</td>
+		</tr>
+	</table>
+</div>
